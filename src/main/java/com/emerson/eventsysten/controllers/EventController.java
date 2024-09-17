@@ -18,7 +18,7 @@ public class EventController {
 
     @RequestMapping(value = "/eventRegister", method = RequestMethod.GET)
     public String form() {
-        return "events/eventForm";
+        return "event/eventForm";
     }
 
     @RequestMapping(value = "/eventRegister", method = RequestMethod.POST)
@@ -42,7 +42,7 @@ public class EventController {
     @RequestMapping(value = "/{cod}")
     public ModelAndView detailsEvents(@PathVariable("cod") Long cod) {
         Event event = eventRepository.findByCod(cod);
-        ModelAndView modelAndView = new ModelAndView("detailsEvent");
+        ModelAndView modelAndView = new ModelAndView("event/detailsEvent");
         modelAndView.addObject("event", event);
         return modelAndView;
     }

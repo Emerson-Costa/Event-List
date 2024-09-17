@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Details Event</title>
+</head>
+
+<body>
+    <h1>Event</h1>
+    <h3><a  href="/events" class="waves-effect waves-light btn">
+            <i class="material-icons left">add_circle_outline</i>
+            Events List
+        </a>
+    </h3>
+
+        <div th:each="event : ${event}" class="container">
+            <div class="row">
+                <p>Name: <span th:text="${event.name}"></span></p>
+                <p>Locale: <span th:text="${event.locale}"></span></p>
+                <p>Data: <span th:text="${event.data}"></span></p>
+                <p>Hour: <span th:text="${event.hour}"></span></p>
+            </div>
+        </div>
+    
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+</body>
+</html>
