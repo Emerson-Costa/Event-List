@@ -2,10 +2,13 @@ package com.emerson.eventsysten.models;
 
 import java.io.Serializable;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 //Entidade da tabela @Entity
 @Entity
@@ -21,6 +24,10 @@ public class Event implements Serializable {
     private String locale;
     private String data;
     private String hour;
+
+    /* Relação entre evento e convidados */
+    @OneToMany // Um Evento para muitos convidados
+    private List<Guest> guests;
 
     public Event(String name, String locale, String data, String hour) {
         this.name = name;

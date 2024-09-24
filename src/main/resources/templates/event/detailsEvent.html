@@ -30,6 +30,13 @@
                 <p>Hour: <span th:text="${event.hour}"></span></p>
             </div>
         </div>
+
+        <!--Estes nomes devem ser iguais aos atributos do modelo criado-->
+        <form action="post">
+            Name: <input type="text" value="" name="guestName"/>
+            Rg: <input type="text" value="" name="rg"/>
+            <button class="waves-effect waves-light btn" type="submit">Send</button>
+        </form>
     
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
